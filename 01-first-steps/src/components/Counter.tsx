@@ -30,7 +30,12 @@ export function Counter({
           <button onClick={() => {}} className="btn bg-purple-400 text-white">
             Auto-increase
           </button>
-          <button onClick={() => {}} className="btn bg-orange-400 text-white">
+          <button
+            onClick={() => {
+              setCounter(counter - step);
+            }}
+            className="btn bg-orange-400 text-white"
+          >
             Decrease
           </button>
           <button
