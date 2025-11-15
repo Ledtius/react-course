@@ -1,4 +1,5 @@
 import { useState, useEffect, type JSX } from "react";
+
 import type { CounterProps } from "../types/general.types.ts";
 
 export function Counter({
