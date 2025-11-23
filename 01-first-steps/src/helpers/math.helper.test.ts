@@ -1,77 +1,78 @@
 import { describe, expect, test } from "vitest";
 import { add, multiply, subtract } from "./math.helper";
 
-describe("add", () => {
-  test("should add two positives numbers", () => {
-    // * Testing sections
+describe("Add description", () => {
+  test("Should addition two numbers", () => {
+    // ! Arrange
 
-    // ! 1. Arrange
-    const a: number = 1;
-    const b: number = 3;
+    const a: number = 2;
+    const b: number = 4;
 
-    // ! 2. Act
+    // ! Act
+
     const result = add(a, b);
-    console.log(result);
 
-    // ! 3. Assert
-    expect(result).toBe(4);
+    //! Assert
+
+    expect(result).toBe(6);
   });
 });
 
-describe("subtract", () => {
-  test("should subtract two positive numbers", () => {
-    // ! 1. Arrange
-    const a: number = 2;
-    const b: number = 4;
+describe("Subtract description", () => {
+  test("Should subtract two numbers", () => {
+    // ! Arrange
 
-    // ! 2. Act
+    const num1: number = 34;
+    const num2: number = 14;
 
-    const result = subtract(a, b);
+    // ! Act
 
-    // ! 3. Assert
+    const result = subtract(num1, num2);
 
-    expect(result).toBe(a - b);
+    // ! Assert
+
+    expect(result).toBe(20);
   });
-  test("should subtract two positive numbers", () => {
-    // ! 1. Arrange
-    const a: number = -2;
-    const b: number = 4;
 
-    // ! 2. Act
+  test("Two", () => {
+    // ! Arrange
 
-    const result = subtract(a, b);
+    const num1: number = 10;
+    const num2: number = -10;
 
-    // ! 3. Assert
+    // ! Act
 
-    expect(result).toBe(-6);
+    const result = subtract(num1, num2);
+
+    // ! Assert
+
+    expect(result).toBe(20);
   });
 });
 
-describe("multiply", () => {
-  test("should multiply two positive numbers", () => {
-    // ! 1. Arrange
-    const a: number = 23;
-    const b: number = 2;
+describe("Multiply description", () => {
+  test("Should multiply two numbers", () => {
+    // ! Arrange
+    const x: number = 45;
+    const y: number = -3;
 
-    // ! 2. Act
+    // ! Act
 
-    const result = multiply(a, b);
+    const result = multiply(x, y);
+    // ! Assert
 
-    // ! 3. Assert
-
-    expect(result).toBe(46);
+    expect(result).toBe(-135);
   });
-  test("should multiply two positive numbers", () => {
-    // ! 1. Arrange
-    const a: number = 2;
-    const b: number = 4;
+  test("Two", () => {
+    // ! Arrange
+    const x: number = 100;
+    const y: number = -3;
 
-    // ! 2. Act
+    // ! Act
 
-    const result = multiply(a, b);
+    const result = multiply(x, y);
+    // ! Assert
 
-    // ! 3. Assert
-
-    expect(result).toBe(a * b);
+    expect(result).toBe(x * y);
   });
 });

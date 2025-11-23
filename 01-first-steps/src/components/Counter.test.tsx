@@ -1,12 +1,10 @@
-import { test, describe } from "vitest";
-import { Counter } from "./Counter";
-import { CounterProps } from "../types/general.types";
-
+import { describe, test } from "vitest";
 import { render, screen } from "@testing-library/react";
+import { Counter } from "./Counter";
 
-describe("Counter component", () => {
-  test("asd", () => {
-    const counterVariable = render(
+describe("Counter prove", () => {
+  test("Value of the h1", () => {
+    const { container } = render(
       <Counter
         initial={1}
         step={3}
@@ -16,7 +14,7 @@ describe("Counter component", () => {
       />
     );
 
+    console.log(container.innerHTML);
     screen.debug();
-    console.log({ counterVariable });
   });
 });
