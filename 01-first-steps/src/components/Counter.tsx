@@ -1,6 +1,7 @@
 import { useState, useEffect, type JSX } from "react";
 
 import type { CounterProps } from "../types/general.types.ts";
+import { test } from "vitest";
 
 export function Counter({
   initial = 0,
@@ -13,7 +14,10 @@ export function Counter({
 
   onChange(initial);
   return (
-    <div className="text-center ">
+    <div className="text-center" data-testid="div-id">
+      <h1 data-testid="h1-id" className="text-3xl font-medium mb-4">
+        Counter
+      </h1>
       <h1 className="text-3xl font-medium mb-4">Counter</h1>
       <div className="flex flex-col items-center gap-4 w-fit bg-gray-300 p-4 shadow-sm rounded-sm">
         <div className="text-2xl bg-gray-100 w-full text-center rounded-sm inset-shadow-2xs font-medium">
