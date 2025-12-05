@@ -3,3 +3,7 @@
 .input {
   @apply border-neutral-500 border-2 rounded-md p-2;
 }
+
+.btn {
+  @apply rounded-md border-1 p-2 cursor-pointer;
+}

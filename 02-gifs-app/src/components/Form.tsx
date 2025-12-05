@@ -1,13 +1,15 @@
-export const Form = () => {
+import { useState, type JSX } from "react";
+
+export const Form = (): JSX.Element => {
   return (
     <>
       <form
-        onSubmit={(e) => {
+        onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
           e.preventDefault();
         }}
       >
         <input className="input" type="text" />
-        <button className=" input">Buscar</button>
+        <button className=" input cursor-pointer">Buscar</button>
       </form>
     </>
   );
