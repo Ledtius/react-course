@@ -1,4 +1,6 @@
-export const Pagination = () => {
+import type { JSX } from "react";
+
+export const Pagination = (): JSX.Element => {
   return (
     <>
       <section className="flex justify-center gap-2">

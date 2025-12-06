@@ -1,6 +1,12 @@
 import { useState, type JSX } from "react";
 
 export const Form = (): JSX.Element => {
+  const [searchName, setSearchName] = useState("");
+
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    setSearchName("");
+  };
+
   return (
     <>
       <form
@@ -8,8 +14,19 @@ export const Form = (): JSX.Element => {
           e.preventDefault();
         }}
       >
-        <input className="input" type="text" />
-        <button className=" input cursor-pointer">Buscar</button>
+        <input
+          className="input"
+          type="text"
+          value={searchName}
+          onChange={(e) => {
+            const value = e.target.value;
+            console.log(value);
+            setSearchName(value);
+          }}
+        />
+        <button className="input cursor-pointer" onClick={handleClick}>
+          Buscar
+        </button>
       </form>
     </>
   );
