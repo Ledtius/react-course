@@ -1,12 +1,9 @@
 import { useContext, useState, type JSX } from "react";
-
-import { GiphyContext } from "../context/GiphyContext";
 import { giphyApi } from "../services/giphyApi";
 
-// const {} = useContext(GiphyContext);
-
-const [searchName, setSearchName] = useState("");
 export const Form = (): JSX.Element => {
+  const [searchName, setSearchName] = useState("");
+
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     giphyApi(searchName);
     setSearchName("");
