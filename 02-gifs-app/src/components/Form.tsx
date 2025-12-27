@@ -1,5 +1,7 @@
 import { useContext, useState, type JSX } from "react";
-import { giphyApi } from "../services/giphyApi";
+import { giphyApi } from "../services/giphyApi.ts";
+import { useStorage } from "../hooks/useStorage";
+
 
 export const Form = (): JSX.Element => {
   const [searchName, setSearchName] = useState("");
