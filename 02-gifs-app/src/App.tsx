@@ -4,6 +4,7 @@ import { History } from "./components/History";
 import { Pagination } from "./components/Pagination";
 import { GifList } from "./components/GifList";
 
+
 function App() {
   return (
     <>

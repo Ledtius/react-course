@@ -1,13 +1,16 @@
 import { useContext, useState, type JSX } from "react";
-import { giphyApi } from "../services/giphyApi.ts";
-import { useStorage } from "../hooks/useStorage";
-
+import { useGiphy } from "../hooks/useGiphy";
+// import { giphyApi } from "../services/giphyApi.ts";
 
 export const Form = (): JSX.Element => {
   const [searchName, setSearchName] = useState("");
+  const [gifName, setGifName] = useGiphy();
+
+  /* Cada vez que escribo, React re-renderiza el componente y llama a useGiphy una y otra vez */
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    giphyApi(searchName);
+    setGifName(searchName);
+
     setSearchName("");
   };
 
@@ -24,7 +27,7 @@ export const Form = (): JSX.Element => {
           value={searchName}
           onChange={(e) => {
             const value = e.target.value;
-            console.log(value);
+            // console.log(value);
             setSearchName(value);
           }}
         />
