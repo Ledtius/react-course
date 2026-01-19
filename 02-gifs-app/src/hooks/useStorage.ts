@@ -1,13 +1,23 @@
 import { useEffect, useState } from "react";
-import { giphyApi } from "../services/giphyApi";
 
 export const useStorage = () => {
-  const [giphyData, setGiphyData] = useState(
-    () => JSON.parse(localStorage.getItem("gifsLS")) || []
+  const [storageValue, setStorageValue] = useState(
+    () => JSON.parse(localStorage.getItem("gifsLS")) || {}
   );
 
   console.log("here useStorage!");
-  if ((giphyData.length = 0)) localStorage.setItem("gifsLS", giphyData);
+  console.log(storageValue);
 
-  return [giphyData, setGiphyData];
+  useEffect(() => {
+
+    /* Si el objeto tiene un numero de claves mayor a 0 (Que tenga valor el objeto), envialo al localStorage */
+    if (Object.keys(storageValue).length > 0) {
+      localStorage.setItem("gifsLS", storageValue);
+      console.log("LocalStorage Created!");
+    }
+  }, [storageValue]);
+
+  console.log(Object.keys(storageValue).length);
+  if (Object.keys(storageValue).length > 0)
+    return [storageValue, setStorageValue];
 };

@@ -4,6 +4,8 @@ import { useGiphy } from "../hooks/useGiphy";
 
 export const Form = (): JSX.Element => {
   const [searchName, setSearchName] = useState("");
+  /* Esto siempre se llama independientemente si escirba o no en el Form, ya que se hace el primer render de la app, se ejecuta el useGiphy, por ende se ejecuta  los hooks o funciones que se llamen en el useGiphy tambien
+   */
   const [gifName, setGifName] = useGiphy();
 
   /* Cada vez que escribo, React re-renderiza el componente y llama a useGiphy una y otra vez */
