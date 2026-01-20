@@ -4,7 +4,7 @@ const API_KEY = import.meta.env.VITE_GIPHY_KEY;
 
 export const giphyApi = async (name: string, setStorageValue: Function) => {
   console.log("here! giphyAPI");
-  
+
   // const [storageValue, setStorageValue] = useStorage();
   try {
     const response = await fetch(
@@ -15,7 +15,8 @@ export const giphyApi = async (name: string, setStorageValue: Function) => {
 
     const data = await response.json();
     console.log(data);
-    console.log("seStorageValue API");
+
+
     setStorageValue(data);
     return data;
   } catch (e) {

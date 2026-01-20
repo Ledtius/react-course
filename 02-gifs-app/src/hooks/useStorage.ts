@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { GifList } from "../components/GifList";
 
 export const useStorage = () => {
   console.log("useStorage!");
@@ -22,19 +23,21 @@ export const useStorage = () => {
   if (Object.keys(storageValue).length > 0) {
     const { data } = storageValue;
 
-    data.forEach((gifObj) => {
-      const { bitly_gif_url } = gifObj;
+    data.forEach((gifData) => {
+      const { images } = gifData;
+      const { fixed_height } = images;
+      const { url } = fixed_height;
 
-      gifUrls.push(bitly_gif_url);
+      gifUrls.push(url);
     });
 
-    console.log(gifUrls);
+    // console.log(gifUrls);
 
     if (!localStorage.getItem("gifUrlsLS")) {
       console.log("No esta el gifUrlsLS");
       localStorage.setItem("gifUrlsLS", gifUrls);
     }
   }
-  console.log(gifUrls);
+  // console.log(gifUrls);
   return { storageValue, setStorageValue, gifUrls };
 };
