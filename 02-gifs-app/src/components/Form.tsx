@@ -1,19 +1,15 @@
-import { useContext, useState, type JSX } from "react";
+import { useContext, useEffect, useState, type JSX } from "react";
 import { useGiphy } from "../hooks/useGiphy";
-// import { giphyApi } from "../services/giphyApi.ts";
 
 export const Form = (): JSX.Element => {
+  console.log("Form component!");
   const [searchName, setSearchName] = useState("");
-  /* Esto siempre se llama independientemente si escirba o no en el Form, ya que se hace el primer render de la app, se ejecuta el useGiphy, por ende se ejecuta  los hooks o funciones que se llamen en el useGiphy tambien
-   */
-  const [gifName, setGifName] = useGiphy();
 
-  /* Cada vez que escribo, React re-renderiza el componente y llama a useGiphy una y otra vez */
+  const { setGifName } = useGiphy();
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    setGifName(searchName);
-
     setSearchName("");
+    setGifName(() => searchName);
   };
 
   return (
@@ -29,7 +25,6 @@ export const Form = (): JSX.Element => {
           value={searchName}
           onChange={(e) => {
             const value = e.target.value;
-            // console.log(value);
             setSearchName(value);
           }}
         />
