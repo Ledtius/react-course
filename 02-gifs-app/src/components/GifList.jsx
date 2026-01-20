@@ -1,9 +1,15 @@
-import type { JSX } from "react";
-import { useStorage } from "../hooks/useStorage";
+import { useContext, useEffect } from "react";
+import { GiphyContext } from "../context/GiphyContext";
 
-export const GifList = (): JSX.Element => {
+export const GifList = () => {
   console.log("GifList component!");
-  const { gifUrls } = useStorage();
+  const { gifUrls } = useContext(GiphyContext);
+
+  useEffect(() => {
+    console.log(gifUrls);
+  }, [gifUrls]);
+  // const { gifUrls } = useStorage();
+
   console.log({ gifUrls });
 
   /*   const list = gifUrls.map((url) => (

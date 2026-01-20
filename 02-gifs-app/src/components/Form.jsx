@@ -1,13 +1,13 @@
-import { useContext, useEffect, useState, type JSX } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useGiphy } from "../hooks/useGiphy";
 
-export const Form = (): JSX.Element => {
+export const Form = () => {
   console.log("Form component!");
   const [searchName, setSearchName] = useState("");
 
   const { setGifName } = useGiphy();
 
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleClick = () => {
     setSearchName("");
     setGifName(() => searchName);
   };
@@ -15,7 +15,7 @@ export const Form = (): JSX.Element => {
   return (
     <>
       <form
-        onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
+        onSubmit={() => {
           e.preventDefault();
         }}
       >

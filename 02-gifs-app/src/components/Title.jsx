@@ -1,6 +1,4 @@
-import type { JSX } from "react";
-
-export const Title = (): JSX.Element => {
+export const Title = () => {
   return (
     <>
       <h1 className="font-bold text-3xl">Buscador de Gifs</h1>

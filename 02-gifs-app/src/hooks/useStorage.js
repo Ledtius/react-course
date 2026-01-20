@@ -16,7 +16,7 @@ export const useStorage = () => {
     }
   }, [storageValue]);
 
-  let gifUrls: string[] = [];
+  let gifUrls = [];
 
   console.log(Object.keys(storageValue).length);
 

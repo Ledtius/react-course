@@ -2,7 +2,7 @@ import { useStorage } from "../hooks/useStorage";
 
 const API_KEY = import.meta.env.VITE_GIPHY_KEY;
 
-export const giphyApi = async (name: string, setStorageValue: Function) => {
+export const giphyApi = async (name, setStorageValue) => {
   console.log("here! giphyAPI");
 
   // const [storageValue, setStorageValue] = useStorage();
@@ -15,7 +15,6 @@ export const giphyApi = async (name: string, setStorageValue: Function) => {
 
     const data = await response.json();
     console.log(data);
-
 
     setStorageValue(data);
     return data;
