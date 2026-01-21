@@ -7,12 +7,13 @@ export const useGiphy = () => {
 
   const [gifName, setGifName] = useState("");
 
-  const { setStorageValue } = useStorage();
+  // const { setStorageValue } = useStorage();
 
   console.log({ gifName });
 
   useEffect(() => {
-    if (gifName) giphyApi(gifName, setStorageValue);
+    console.log("heres")
+    // if (gifName) giphyApi(gifName, setStorageValue);
   }, [gifName]);
 
   return { gifName, setGifName };

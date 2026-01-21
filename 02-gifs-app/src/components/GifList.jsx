@@ -5,9 +5,9 @@ export const GifList = () => {
   console.log("GifList component!");
   const { gifUrls } = useContext(GiphyContext);
 
-  useEffect(() => {
-    console.log(gifUrls);
-  }, [gifUrls]);
+  // useEffect(() => {
+  //   console.log(gifUrls);
+  // }, [gifUrls]);
   // const { gifUrls } = useStorage();
 
   console.log({ gifUrls });
@@ -19,9 +19,9 @@ export const GifList = () => {
   return (
     <>
       <section className="border-2 h-80">
-        {gifUrls.map((url) => (
+        {/* {gifUrls.map((url) => (
           <img src={url} key={url} alt="gif" className="max-w-2xl max-h-2xl" />
-        ))}
+        ))} */}
       </section>
     </>
   );

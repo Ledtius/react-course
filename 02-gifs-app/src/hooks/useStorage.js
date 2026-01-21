@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import { GifList } from "../components/GifList";
+import { useContex, useEffect, useState } from "react";
 
 export const useStorage = () => {
   console.log("useStorage!");

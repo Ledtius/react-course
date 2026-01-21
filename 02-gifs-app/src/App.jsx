@@ -3,23 +3,18 @@ import { Title } from "./components/Title";
 import { History } from "./components/History";
 import { Pagination } from "./components/Pagination";
 import { GifList } from "./components/GifList";
-
-import { GiphyContext } from "./context/GiphyContext";
-
-import { useStorage } from "./hooks/useStorage";
+import { GiphyProvider } from "./context/GiphyProvider";
 
 function App() {
-  const { gifUrls } = useStorage();
-
   return (
     <>
-      <GiphyContext.Provider value={{ gifUrls }}>
+      <GiphyProvider>
         <Title />
         <Form />
         <History />
         <GifList />
         <Pagination />
-      </GiphyContext.Provider>
+      </GiphyProvider>
     </>
   );
 }

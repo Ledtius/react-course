@@ -1,11 +1,11 @@
 import { useContext, useEffect, useState } from "react";
-import { useGiphy } from "../hooks/useGiphy";
+import { GiphyContext } from "../context/GiphyContext";
 
 export const Form = () => {
   console.log("Form component!");
   const [searchName, setSearchName] = useState("");
 
-  const { setGifName } = useGiphy();
+  const { gifName, setGifName } = useContext(GiphyContext);
 
   const handleClick = () => {
     setSearchName("");

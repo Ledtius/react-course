@@ -1,8 +1,10 @@
-import { useStorage } from "../hooks/useStorage";
+import { GiphyContext } from "../context/GiphyContext";
+import { useContext } from "react";
 
 const API_KEY = import.meta.env.VITE_GIPHY_KEY;
 
-export const giphyApi = async (name, setStorageValue) => {
+export const giphyApi = async () => {
+  const { setStorageValue } = useContext(GiphyContext);
   console.log("here! giphyAPI");
 
   // const [storageValue, setStorageValue] = useStorage();
